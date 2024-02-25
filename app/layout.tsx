@@ -1,3 +1,17 @@
+import '@/app/ui/global.css';
+import {inter} from "@/app/ui/fonts";
+import {clsx} from "clsx";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Acme Dashboard',
+    default: 'Acme Dashboard',
+  },
+  description: 'The official Next.js Course Dashboard, built with App Router.',
+  metadataBase: new URL('https://nextjs-dashboard-two-henna-77.vercel.app/'),
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+    <body className={clsx(inter.className, "antialiased")}>{children}</body>
     </html>
   );
 }
